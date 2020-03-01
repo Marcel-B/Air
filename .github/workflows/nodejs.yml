@@ -26,9 +26,9 @@ jobs:
         cd Stack.Air/ClientApp
         npm run build --if-present
 
-    - name: test
-      run: |
-        cd Stack.Air/ClientApp
-        npm test
-      env:
-        CI: true
+#    - name: test
+#      run: |
+#        cd Stack.Air/ClientApp
+#        npm test
+#      env:
+#        CI: true
