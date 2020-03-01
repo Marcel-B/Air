@@ -14,10 +14,7 @@ export class FetchDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      console.log('Hello');
       this.air = data.air;
     });
   }
 }
-
-

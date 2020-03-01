@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b980d6-90a1-4a81-95e2-a2b4b4d3c3aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/marcel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/marcel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/models/air.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/models/air.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582928193096</updated>
       <workItem from="1582928196974" duration="802000" />
-      <workItem from="1583087811827" duration="3327000" />
+      <workItem from="1583087811827" duration="4639000" />
     </task>
     <servers />
   </component>
