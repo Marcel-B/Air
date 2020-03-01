@@ -51,11 +51,17 @@ namespace Stack.Air
             //}
             //else
             //{
+            
             var secretProvider = new SecretProvider();
             var password = secretProvider.GetSecret("sqlserver");
             var conString = secretProvider.GetSecret("CON_STRING");
+            if (Environment.IsDevelopment())
+            {
+                password = "str0ngpasswort!";
+                conString = "Server=localhost,1433;Database=Air;User Id=sa;Password=";
+            }
 
-            services.AddDbContext<DataContext>(options =>
+                services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer($"{conString}{password}");
             });

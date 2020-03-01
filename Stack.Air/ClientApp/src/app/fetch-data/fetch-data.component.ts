@@ -1,25 +1,22 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
 })
-export class FetchDataComponent {
+
+export class FetchDataComponent implements OnInit {
   public air: Air[];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Air[]>(baseUrl + 'api/air').subscribe(result => {
-      this.air = result;
-    }, error => console.error(error));
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.data.subscribe(data => {
+      console.log('Hello');
+      this.air = data.air;
+    });
   }
 }
 
-interface Air {
-  time: string;
-  temperature: number;
-  pressure: number;
-  humidity: number;
-  sdsP1: number;
-  sdsP2: number;
-}
+
