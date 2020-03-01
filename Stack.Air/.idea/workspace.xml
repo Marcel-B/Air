@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="97b980d6-90a1-4a81-95e2-a2b4b4d3c3aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Stack.Air.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/e2e/tsconfig.e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/app.server.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/chart/chart.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/chart/chart.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/tsconfig.server.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts/IEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Contracts/ITimeable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AirController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Models/Sensor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Models/Time.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Models/Timeable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/Models/Value.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20200229123144_Initial.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20200229123144_Initial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Error.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Error.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stack.Air.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherForecast.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/air.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Air/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Air/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stack.Air.Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack.Air.Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stack.Air.Server/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack.Air.Server/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nuget.config" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YSFfcnOdSJ04zwsA8UJz4N4bjF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97b980d6-90a1-4a81-95e2-a2b4b4d3c3aa" name="Default Changelist" comment="" />
+      <created>1582928193096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582928193096</updated>
+      <workItem from="1582928196974" duration="802000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="712" y="435" width="350" height="300" key="org.angular.cli.generate" timestamp="1582928663083">
+      <screen x="0" y="23" width="1680" height="976" />
+    </state>
+    <state x="712" y="435" width="350" height="300" key="org.angular.cli.generate/0.23.1680.976@0.23.1680.976" timestamp="1582928663083" />
+  </component>
+</project>

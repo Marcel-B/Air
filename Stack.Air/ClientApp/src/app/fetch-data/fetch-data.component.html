@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!air"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="air">
+  <thead>
+      <tr>
+          <th>Timestamp UTC</th>
+          <th>Temp. (C)</th>
+          <th>Humidity (%)</th>
+          <th>Pressure (hPa)</th>
+          <th>SDS P1</th>
+          <th>SDS P2</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let value of air">
+          <td>{{ value.time }}</td>
+          <td>{{ value.temperature }}</td>
+          <td>{{ value.humidity }}</td>
+          <td>{{ value.pressure / 100 }}</td>
+          <td>{{ value.sdsP1 }}</td>
+          <td>{{ value.sdsP2 }}</td>
+      </tr>
+  </tbody>
+</table>

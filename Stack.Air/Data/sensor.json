@@ -1,0 +1,32 @@
+﻿[
+  {
+    "name": "SdsP1"
+  },
+  {
+    "name": "SdsP2"
+  },
+  {
+    "name": "DhtTemperature"
+  },
+  {
+    "name": "DhtHumidity"
+  },
+  {
+    "name": "BmpPressure"
+  },
+  {
+    "name": "BmpTemperature"
+  },
+  {
+    "name": "Samples"
+  },
+  {
+    "name": "MinMicro"
+  },
+  {
+    "name": "MaxMicro"
+  },
+  {
+    "name": "Signal"
+  }
+]

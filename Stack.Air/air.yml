@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  angularair:
+    image: millegalb/angularair:0.0.1
+    deploy:
+        labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.angularair-https.entrypoints=websecure"
+          - "traefik.http.routers.angularair-https.rule=Host(`sensor.feinstaub.org`)"
+          - "traefik.http.routers.angularair-https.tls=true"
+          - "traefik.http.routers.angularair-https.tls.certresolver=sec"
+          - "traefik.http.services.angularairservice.loadbalancer.server.port=80"
+    networks: 
+      - skynet
+    environment:
+      ASPNETCORE_ENVIRONMENT: 'Production'
+      CON_STRING: 'Server=db,1433;Database=Air;User Id=sa;Password='
+    secrets:
+      - sqlserver
+
+secrets:
+  sqlserver:
+    external: true
+networks:
+  skynet:
+    external: true
+
+

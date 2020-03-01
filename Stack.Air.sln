@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack.Air", "Stack.Air\Stack.Air.csproj", "{A80ACEE3-F884-429A-904A-163B14E468E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack.Air.Tests", "Stack.Air.Tests\Stack.Air.Tests.csproj", "{029299CB-92BF-449D-8EAB-A2C8D75A72E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A80ACEE3-F884-429A-904A-163B14E468E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80ACEE3-F884-429A-904A-163B14E468E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80ACEE3-F884-429A-904A-163B14E468E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80ACEE3-F884-429A-904A-163B14E468E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{029299CB-92BF-449D-8EAB-A2C8D75A72E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{029299CB-92BF-449D-8EAB-A2C8D75A72E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{029299CB-92BF-449D-8EAB-A2C8D75A72E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{029299CB-92BF-449D-8EAB-A2C8D75A72E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
