@@ -18,7 +18,7 @@ jobs:
       run: dotnet build --configuration Release
     - name: Angular
       run: |
-        cd ClientApp
+        cd Stack.Air/ClientApp
         ng build
     - name: Test
       run: dotnet test --configuration Release
