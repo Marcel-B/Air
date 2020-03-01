@@ -2,106 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b980d6-90a1-4a81-95e2-a2b4b4d3c3aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/resolvers/air.resolver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/dotnetcore.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/AirFromSensorDtoTests.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/Stack.Air.Tests.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/_snapshots/AirDtoTests_AirDtoDeserializeAsExpected.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/_snapshots/AirDtoTests_AirDtoDeserializeNameAsExpected.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/_snapshots/AirDtoTests_AirDtoDeserializeSoftwareVersionAsExpected.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/_snapshots/AirFromSensorDtoTests_AirDtoDeserializeNameAsExpected.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/_snapshots/AirFromSensorDtoTests_AirDtoDeserializeSoftwareVersionAsExpected.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.Tests/airExample.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack.Air.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Stack.Air.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/app.server.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/chart/chart.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/chart/chart.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/counter/counter.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/fetch-data/fetch-data.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/home/home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/nav-menu/nav-menu.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/assets/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/models/air.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/tsconfig.server.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/IEntity.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contracts/ITimeable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AirController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Converters/StringSensorConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Dtos/AirFromSensorDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Dtos/SensorDataValueDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Dtos/TimeDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Dtos/ValueDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Dtos/ValuesForListDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Enums/SensorType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/Sensor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/Time.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/Timeable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Models/Value.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Seed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/sensor.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helper/AutoMapperProfiles.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20200301005343_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20200301005343_InitialCreate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NuGet.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Error.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Error.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/_ViewImports.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stack.Air.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/air.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlog.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/models/air.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/models/air.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/app/services/air.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1582928193096</updated>
       <workItem from="1582928196974" duration="802000" />
-      <workItem from="1583087811827" duration="2963000" />
+      <workItem from="1583087811827" duration="3327000" />
     </task>
     <servers />
   </component>
