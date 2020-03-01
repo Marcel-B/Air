@@ -14,7 +14,6 @@ export class AirService {
   }
 
   getData(): Observable<Air[]> {
-    console.log('Air service here');
     return this.httpClient.get<Air[]>(this.baseUrl + 'api/air');
   }
 }
