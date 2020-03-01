@@ -16,9 +16,5 @@ jobs:
         dotnet-version: 3.1.100
     - name: Build
       run: dotnet build --configuration Release
-    - name: Angular
-      run: |
-        cd Stack.Air/ClientApp
-        ng build
     - name: Test
       run: dotnet test --configuration Release
