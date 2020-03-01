@@ -3,6 +3,7 @@ import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
 import {AirService} from '../services/air.service';
 import {catchError} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
+import {Air} from '../models/air';
 
 @Injectable()
 export class AirResolver implements  Resolve<Air[]> {

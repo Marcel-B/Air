@@ -1,4 +1,4 @@
-interface Air {
+export interface Air {
   time: string;
   temperature: number;
   pressure: number;
