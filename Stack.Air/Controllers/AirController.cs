@@ -66,6 +66,11 @@ namespace Stack.Air.Controllers
         public async Task<IActionResult> PostAirAsync(
             AirFromSensorDto airFromSensorDto)
         {
+            if(airFromSensorDto.Name != "2063272")
+            {
+                return new UnauthorizedResult();
+            }
+
             var time = new Time
             {
                 Timestamp = airFromSensorDto.Time.UtcDateTime,
