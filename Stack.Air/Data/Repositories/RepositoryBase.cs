@@ -9,8 +9,8 @@ namespace com.b_velop.Stack.Air.Data.Repositories
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        private IDataContext _context;
-        private ILogger<RepositoryBase<T>> _logger;
+        protected IDataContext _context;
+        protected ILogger<RepositoryBase<T>> _logger;
 
         public RepositoryBase(
             IDataContext context,

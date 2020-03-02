@@ -43,7 +43,7 @@ namespace Stack.Air.Tests
         public async Task ReturnUnauthorizedWhenSensorIdIsNotCorrect()
         {
             // Arrange
-            var sut = new AirController(null, GetMapperMock().Object);
+            var sut = new AirsController(null, GetMapperMock().Object);
 
             // Act
             var actual = await sut.PostAirAsync(GetAirFromSensorDto());

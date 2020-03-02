@@ -13,11 +13,11 @@ namespace com.b_velop.Stack.Air.Data
 
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
-        public async Task<int> SaveChangesAsync() => await base.SaveChangesAsync();
+        //public async Task<int> SaveChangesAsync() => await base.SaveChangesAsync();
 
-        public DbSet<T> Set<T>() where T : class
-        {
-            return base.Set<T>();
-        }
+        //public DbSet<T> Set<T>() where T : class
+        //{
+        //    return base.Set<T>();
+        //}
     }
 }

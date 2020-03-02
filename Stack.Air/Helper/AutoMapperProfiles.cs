@@ -18,6 +18,7 @@ namespace com.b_velop.Stack.Air.Helper
             CreateMap<Value, ValueDto>()
                 .ForMember(dest => dest.Name, act => act.MapFrom(_ => _.Sensor.Name));
             CreateMap<Time, TimeDto>();
+            CreateMap<Sensor, GetSensorDto>();
         }
     }
 }

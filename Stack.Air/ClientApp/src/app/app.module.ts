@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { TableComponent } from './table/table.component';
 import { ChartComponent } from './chart/chart.component';
-import {AirResolver} from './resolvers/air.resolver';
+import { AirResolver} from './resolvers/air.resolver';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {AirResolver} from './resolvers/air.resolver';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
+    TableComponent,
     ChartComponent,
   ],
   imports: [
@@ -28,7 +28,7 @@ import {AirResolver} from './resolvers/air.resolver';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, resolve: {air: AirResolver} },
+      { path: 'table', component: TableComponent, resolve: {air: AirResolver} },
       { path: 'chart', component: ChartComponent },
     ])
   ],

@@ -17,12 +17,12 @@ namespace Stack.Air.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AirController : ControllerBase
+    public class AirsController : ControllerBase
     {
         private IMapper _mapper;
         private IRepositoryWrapper _repository;
 
-        public AirController(
+        public AirsController(
             IRepositoryWrapper repository,
             IMapper mapper)
         {
@@ -35,7 +35,7 @@ namespace Stack.Air.Controllers
         {
             var cultureInfo = new CultureInfo("de-DE");
             //var airs = await _repository.Times.Include("Values").Include("Values.Sensor").ToListAsync();
-            var airs = await _repository.Times.GetAllAsync();
+            var airs = await _repository.Times.GetAllIncludeAsync();
             var result = new List<ValuesForListDto>();
             foreach (var air in airs)
             {
