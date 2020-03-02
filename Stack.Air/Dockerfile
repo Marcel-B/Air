@@ -22,7 +22,7 @@ RUN dotnet restore "Stack.Air/Stack.Air.csproj" --configfile "Stack.Air/NuGet.co
 COPY . "./Stack.Air"
 WORKDIR "/src/Stack.Air/ClientApp"
 RUN npm install
-RUN npm build
+RUN npm run-script build
 
 WORKDIR "/src/Stack.Air"
 RUN dotnet build "Stack.Air.csproj" -c Release -o /app/build
