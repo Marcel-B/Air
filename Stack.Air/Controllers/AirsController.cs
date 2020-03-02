@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data;
 using com.b_velop.Stack.Air.Data.Dtos;
 using com.b_velop.Stack.Air.Data.Enums;
@@ -16,24 +17,25 @@ namespace Stack.Air.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AirController : ControllerBase
+    public class AirsController : ControllerBase
     {
         private IMapper _mapper;
-        private DataContext _context;
+        private IRepositoryWrapper _repository;
 
-        public AirController(
-            DataContext context,
+        public AirsController(
+            IRepositoryWrapper repository,
             IMapper mapper)
         {
             _mapper = mapper;
-            _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAirAsync()
         {
             var cultureInfo = new CultureInfo("de-DE");
-            var airs = await _context.Times.Include("Values").Include("Values.Sensor").ToListAsync();
+            //var airs = await _repository.Times.Include("Values").Include("Values.Sensor").ToListAsync();
+            var airs = await _repository.Times.GetAllIncludeAsync();
             var result = new List<ValuesForListDto>();
             foreach (var air in airs)
             {
@@ -54,10 +56,10 @@ namespace Stack.Air.Controllers
         public async Task<IActionResult> GetTimestampByIdAsync(
             long id)
         {
-            var timestamp = await _context.Times
-                .Include("Values")
-                .Include("Values.Sensor")
-                .FirstOrDefaultAsync(_ => _.Id == id);
+            var timestamp = await _repository.Times
+                //.Include("Values")
+                //.Include("Values.Sensor")
+                .FindAsync(id);
             var timestampDto = _mapper.Map<TimeDto>(timestamp);
             return Ok(timestampDto);
         }
@@ -82,8 +84,8 @@ namespace Stack.Air.Controllers
                 var currentValue = _mapper.Map<Value>(value);
                 time.Values.Add(currentValue);
             }
-            _context.Times.Add(time);
-            await _context.SaveChangesAsync();
+            await _repository.Times.CreateAsync(time);
+            await _repository.SaveChangesAsync();
             var timeDto = _mapper.Map<TimeDto>(time);
             return CreatedAtRoute("GetTimes", new { time.Id }, timeDto);
         }

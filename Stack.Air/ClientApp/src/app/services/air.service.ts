@@ -14,6 +14,6 @@ export class AirService {
   }
 
   getData(): Observable<Air[]> {
-    return this.httpClient.get<Air[]>(this.baseUrl + 'api/air');
+    return this.httpClient.get<Air[]>(this.baseUrl + 'api/airs');
   }
 }

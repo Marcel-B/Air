@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data.Models;
 using Newtonsoft.Json;
 
@@ -9,7 +10,7 @@ namespace com.b_velop.Stack.Air.Data
 {
     public class Seed
     {
-        public static void SeedSensors(DataContext context)
+        public static void SeedSensors(IDataContext context)
         {
             if (!context.Sensors.Any())
             {

@@ -1,6 +1,8 @@
 using System.Net;
 using AutoMapper;
+using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data;
+using com.b_velop.Stack.Air.Data.Repositories;
 using com.b_velop.Utilities.Docker;
 using com.b_velop.Utilities.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -41,7 +43,10 @@ namespace Stack.Air
             });
 
             services.AddAutoMapper(typeof(Program).Assembly);
-
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped<IValueRepository, ValueRepository>();
+            services.AddScoped<ITimeRepository, TimeRepository>();
+            services.AddScoped<ISensorRepository, SensorRepository>();
             //if (Environment.IsDevelopment())
             //{
             //    services.AddDbContext<DataContext>(options =>
@@ -51,7 +56,7 @@ namespace Stack.Air
             //}
             //else
             //{
-            
+
             var secretProvider = new SecretProvider();
             var password = secretProvider.GetSecret("sqlserver");
             var conString = secretProvider.GetSecret("CON_STRING");
@@ -61,7 +66,7 @@ namespace Stack.Air
                 conString = "Server=localhost,1433;Database=Air;User Id=sa;Password=";
             }
 
-                services.AddDbContext<DataContext>(options =>
+                services.AddDbContext<IDataContext, DataContext>(options =>
             {
                 options.UseSqlServer($"{conString}{password}");
             });

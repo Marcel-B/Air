@@ -1,4 +1,5 @@
 using System;
+using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ namespace Stack.Air
                     var services = scope.ServiceProvider;
                     try
                     {
-                        var context = services.GetRequiredService<DataContext>();
+                        var context = services.GetRequiredService<IDataContext>();
                         context.Database.Migrate();
                         context.SaveChanges();
                         Seed.SeedSensors(context);

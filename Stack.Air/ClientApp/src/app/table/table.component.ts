@@ -4,10 +4,10 @@ import {Air} from '../models/air';
 
 @Component({
   selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  templateUrl: './table.component.html'
 })
 
-export class FetchDataComponent implements OnInit {
+export class TableComponent implements OnInit {
   public air: Air[];
 
   constructor(private route: ActivatedRoute) { }
