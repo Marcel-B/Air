@@ -68,6 +68,7 @@
     <Folder Include="Helper\" />
     <Folder Include="Converters\" />
     <Folder Include="Data\Enums\" />
+    <Folder Include="Data\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\chart\chart.component.ts" />
