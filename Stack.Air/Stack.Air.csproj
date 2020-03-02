@@ -60,7 +60,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\chart\" />
     <Folder Include="Data\Models\" />
     <Folder Include="Contracts\" />
     <Folder Include="Helper\" />

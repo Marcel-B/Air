@@ -2,3 +2,25 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/bootswatch/dist/materia/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+.line {
+  fill: none;
+  stroke: #ffab00;
+  stroke-width: 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.dot {
+  fill: #ffab00;
+  stroke: #fff;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+
