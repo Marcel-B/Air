@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using com.b_velop.Stack.Air.Contracts;
 using Microsoft.EntityFrameworkCore;
@@ -46,9 +47,11 @@ namespace com.b_velop.Stack.Air.Data.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public Task<IEnumerable<T>> GetByConditionAsync(Func<T, bool> condition)
+        public async Task<IEnumerable<T>> GetByConditionAsync(
+            Func<T, bool> condition)
         {
-            throw new NotImplementedException();
+            var values = _context.Set<T>().Where(condition);
+            return await Task.FromResult(values);
         }
 
         public Task<T> UpdateAsync(long id, T entity)

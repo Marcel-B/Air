@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import * as  d3 from 'd3';
+import {ActivatedRoute} from '@angular/router';
+import {ChartData} from '../models/chartData';
 
 @Component({
   selector: 'app-chart-component',
@@ -8,90 +10,103 @@ import * as  d3 from 'd3';
 })
 
 export class ChartComponent implements AfterViewInit, OnInit {
+  private innerWidth: number;
+  private innerHeight: number;
+  private values: ChartData[];
+
   @ViewChild('myDiv') here: ElementRef;
-  @HostListener('window:resize', ['$event'])
+  constructor(private route: ActivatedRoute) { }
+
   onResize(event) {
     this.innerWidth = this.here.nativeElement.offsetWidth;
     this.innerHeight = window.innerHeight - 100;
     this.chartIt();
   }
 
-  private innerWidth: number;
-  private innerHeight: number;
-
   ngOnInit(): void {
-    this.innerWidth = this.innerWidth;
-    this.innerHeight = this.innerHeight - 100;
+    this.route.data.subscribe(data => {
+      this.values = data.chartData;
+      console.log(this.values);
+    });
+    this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight - 100;
   }
 
   chartIt(): void {
-    // 2. Use the margin convention practice 
-    var margin = { top: 50, right: 50, bottom: 50, left: 50 }
-      , width = this.innerWidth - margin.left - margin.right // Use the window's width 
+    // 2. Use the margin convention practice
+    const margin = { top: 50, right: 50, bottom: 50, left: 50 }
+      , width = this.innerWidth - margin.left - margin.right // Use the window's width
       , height = this.innerHeight - margin.top - margin.bottom; // Use the window's height
 
+    const parseTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L');
+    //2020-03-02T07:41:02.862168
     // The number of datapoints
-    var n = 21;
+    const dataSet = this.values
+        .filter(a => a.measureValue !== undefined && a.timestamp !== undefined)
+        .map(function(v) { return {'v': v.measureValue, 't': parseTime(v.timestamp) }; } );
+
+    const extent = d3.extent(dataSet, function(d) { return d.v; } );
+    const tex = d3.extent(dataSet, function(d) { return d.t; });
 
     // 5. X scale will use the index of our data
-    var xScale = d3.scaleLinear()
-      .domain([0, n - 1]) // input
+    const xScale = d3.scaleTime()
+      .domain(tex)
       .range([0, width]); // output
 
-    // 6. Y scale will use the randomly generate number 
-    var yScale = d3.scaleLinear()
-      .domain([0, 1]) // input 
-      .range([height, 0]); // output 
+    // 6. Y scale will use the randomly generate number
+    const yScale = d3.scaleLinear()
+      .domain(extent) // input
+      .range([height, 0]); // output
 
     // 7. d3's line generator
-    var line = d3.line()
-      .x(function (d, i) { return xScale(i); }) // set the x values for the line generator
-      .y(function (d) { return yScale(d.y); }) // set the y values for the line generator 
-      .curve(d3.curveMonotoneX) // apply smoothing to the line
-
-    // 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
-    var dataset = d3.range(n).map(function (d) { return { "y": d3.randomUniform(1)() } })
+    const line = d3.line()
+      .x(function (d) { return xScale(d.t); }) // set the x values for the line generator
+      .y(function (d) { return yScale(d.v); }) // set the y values for the line generator
+      .curve(d3.curveMonotoneX); // apply smoothing to the line
 
     // 1. Add the SVG to the page and employ #2
 
-    d3.select("svg").remove();
-    var svg = d3.select("#graph")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    d3.select('svg').remove();
+    const svg = d3.select('#graph')
+      .append('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
     // 3. Call the x axis in a group tag
-    svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+    svg.append('g')
+      .attr('class', 'x axis')
+      .attr('transform', 'translate(0,' + height + ')')
+      .call(d3.axisBottom(xScale)
+        .tickFormat(d3.timeFormat('%H:%M')));
+   // .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
     // 4. Call the y axis in a group tag
-    svg.append("g")
-      .attr("class", "y axis")
+    svg.append('g')
+      .attr('class', 'y axis')
       .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-    // 9. Append the path, bind the data, and call the line generator 
-    svg.append("path")
-      .datum(dataset) // 10. Binds data to the line 
-      .attr("class", "line") // Assign a class for styling 
-      .attr("d", line); // 11. Calls the line generator 
+    // 9. Append the path, bind the data, and call the line generator
+    svg.append('path')
+      .datum(dataSet) // 10. Binds data to the line
+      .attr('class', 'line') // Assign a class for styling
+      .attr('d', line); // 11. Calls the line generator
 
-    // 12. Appends a circle for each datapoint 
-    svg.selectAll(".dot")
-      .data(dataset)
-      .enter().append("circle") // Uses the enter().append() method
-      .attr("class", "dot") // Assign a class for styling
-      .attr("cx", function (d, i) { return xScale(i) })
-      .attr("cy", function (d) { return yScale(d.y) })
-      .attr("r", 5)
-      .on("mouseover", function (a, b, c) {
-        console.log(a)
-        this.attr('class', 'focus')
-      })
-      .on("mouseout", function () { })
+    // 12. Appends a circle for each datapoint
+   // svg.selectAll('.dot')
+   //   .datum(dataSet)
+   //   .enter()
+   //   .append('circle') // Uses the enter().append() method
+   //   .attr('class', 'dot') // Assign a class for styling
+   //   .attr('cx', function (d) { return xScale(d.t); })
+   //   .attr('cy', function (d) { return yScale(d.v); })
+  //    .attr('r', 5);
+      //.on('mouseover', function (a, b, c) {
+        //console.log(a);
+       // this.attr('class', 'focus');
+      //})
+     // .on('mouseout', function () { });
   }
 
   ngAfterViewInit(): void {

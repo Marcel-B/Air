@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { TableComponent } from './table/table.component';
 import { ChartComponent } from './chart/chart.component';
 import { AirResolver} from './resolvers/air.resolver';
+import {ChartDataResolver} from './resolvers/chartData.resolver';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,12 @@ import { AirResolver} from './resolvers/air.resolver';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'table', component: TableComponent, resolve: {air: AirResolver} },
-      { path: 'chart', component: ChartComponent },
+      { path: 'chart', component: ChartComponent, resolve: {chartData: ChartDataResolver} },
     ])
   ],
   providers: [
-    AirResolver
+    AirResolver,
+    ChartDataResolver
   ],
   bootstrap: [AppComponent]
 })
