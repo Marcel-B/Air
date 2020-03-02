@@ -19,7 +19,7 @@ namespace com.b_velop.Stack.Air.Data.Repositories
             //var airs = await _repository.Times.Include("Values").Include("Values.Sensor").ToListAsync();
 
             return await _context.Times
-                //.Include("Values").Include("Values.Sensor")
+                .Include("Values").Include("Values.Sensor")
                 .ToListAsync();
         }
     }

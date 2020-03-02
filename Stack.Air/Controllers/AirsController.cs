@@ -1,17 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using com.b_velop.Stack.Air.Contracts;
-using com.b_velop.Stack.Air.Data;
 using com.b_velop.Stack.Air.Data.Dtos;
 using com.b_velop.Stack.Air.Data.Enums;
 using com.b_velop.Stack.Air.Data.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Stack.Air.Controllers
 {
@@ -39,6 +35,8 @@ namespace Stack.Air.Controllers
             var result = new List<ValuesForListDto>();
             foreach (var air in airs)
             {
+                if (air.Values?.Count == 0) 
+                    continue;
                 result.Add(new ValuesForListDto
                 {
                     Humidity = air.Values.First(_ => _.Sensor.Id == (long)SensorType.DhtHumidity).MeasureValue,
