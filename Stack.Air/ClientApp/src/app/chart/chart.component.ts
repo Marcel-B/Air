@@ -41,6 +41,10 @@ export class ChartComponent implements AfterViewInit, OnInit {
     const parseTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%L');
     //2020-03-02T07:41:02.862168
     // The number of datapoints
+    this.values.forEach(v => {
+      console.log(v.timestamp);
+      console.log(parseTime(v.timestamp));
+    });
     const dataSet = this.values
         .filter(a => a.measureValue !== undefined && a.timestamp !== undefined && parseTime(a.timestamp))
         .map(function(value) { return {'v': value.measureValue, 't': parseTime(value.timestamp) }; } );
