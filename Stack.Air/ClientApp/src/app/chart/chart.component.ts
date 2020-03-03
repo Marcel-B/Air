@@ -38,7 +38,7 @@ export class ChartComponent implements AfterViewInit, OnInit {
       , width = this.innerWidth - margin.left - margin.right // Use the window's width
       , height = this.innerHeight - margin.top - margin.bottom; // Use the window's height
 
-    const parseTime = d3.timeParse('%Y-%m-%dT%H:%M:%S.%f');
+    const parseTime = d3.timeParse('%Y-%m-%dT%H:%M:%S');
     //2020-03-02T07:41:02.862168
     // The number of datapoints
     this.values.forEach(v => {

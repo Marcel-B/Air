@@ -34,7 +34,11 @@ namespace Stack.Air
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews()
-                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.DateFormatString = "yyyy-MM-ddTHH:mm:ss";
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -66,10 +70,10 @@ namespace Stack.Air
                 conString = "Server=localhost,1433;Database=Air;User Id=sa;Password=";
             }
 
-                services.AddDbContext<IDataContext, DataContext>(options =>
-            {
-                options.UseSqlServer($"{conString}{password}");
-            });
+            services.AddDbContext<IDataContext, DataContext>(options =>
+        {
+            options.UseSqlServer($"{conString}{password}");
+        });
             //}
         }
 
