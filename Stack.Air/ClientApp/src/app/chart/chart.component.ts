@@ -26,7 +26,7 @@ export class ChartComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.values = data.chartData;
-      console.log(this.values);
+      console.log(`Inc ${this.values.length} values`);
     });
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight - 100;
@@ -42,9 +42,10 @@ export class ChartComponent implements AfterViewInit, OnInit {
     //2020-03-02T07:41:02.862168
     // The number of datapoints
     const dataSet = this.values
-        .filter(a => a.measureValue !== undefined && a.timestamp !== undefined)
-        .map(function(v) { return {'v': v.measureValue, 't': parseTime(v.timestamp) }; } );
+        .filter(a => a.measureValue !== undefined && a.timestamp !== undefined && parseTime(a.timestamp))
+        .map(function(value) { return {'v': value.measureValue, 't': parseTime(value.timestamp) }; } );
 
+    console.log(`Use ${dataSet.length} values`);
     const extent = d3.extent(dataSet, function(d) { return d.v; } );
     const tex = d3.extent(dataSet, function(d) { return d.t; });
 
@@ -53,10 +54,14 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .domain(tex)
       .range([0, width]); // output
 
+    extent[0] -=  (extent[0] * .1);
+    extent[1] +=  (extent[1] * .1);
+
     // 6. Y scale will use the randomly generate number
     const yScale = d3.scaleLinear()
       .domain(extent) // input
       .range([height, 0]); // output
+
 
     // 7. d3's line generator
     const line = d3.line()
@@ -94,14 +99,14 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .attr('d', line); // 11. Calls the line generator
 
     // 12. Appends a circle for each datapoint
-   // svg.selectAll('.dot')
-   //   .datum(dataSet)
-   //   .enter()
-   //   .append('circle') // Uses the enter().append() method
-   //   .attr('class', 'dot') // Assign a class for styling
-   //   .attr('cx', function (d) { return xScale(d.t); })
-   //   .attr('cy', function (d) { return yScale(d.v); })
-  //    .attr('r', 5);
+    svg.selectAll('.dot')
+      .data(dataSet)
+      .enter()
+      .append('circle') // Uses the enter().append() method
+      .attr('class', 'dot') // Assign a class for styling
+      .attr('cx', function (d) { return xScale(d.t); })
+      .attr('cy', function (d) { return yScale(d.v); })
+      .attr('r', 3);
       //.on('mouseover', function (a, b, c) {
         //console.log(a);
        // this.attr('class', 'focus');
