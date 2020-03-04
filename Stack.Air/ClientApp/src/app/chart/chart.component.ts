@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, HostListener }
 import * as  d3 from 'd3';
 import {ActivatedRoute} from '@angular/router';
 import {ChartData} from '../models/chartData';
+import {AirService} from '../services/air.service';
 
 @Component({
   selector: 'app-chart-component',
@@ -13,10 +14,12 @@ export class ChartComponent implements AfterViewInit, OnInit {
   private innerWidth: number;
   private innerHeight: number;
   private values: ChartData[];
+  private sensorId: number;
 
   @ViewChild('myDiv') here: ElementRef;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private chartService: AirService) { }
 
+  @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = this.here.nativeElement.offsetWidth;
     this.innerHeight = window.innerHeight - 100;
@@ -32,6 +35,15 @@ export class ChartComponent implements AfterViewInit, OnInit {
     this.innerHeight = window.innerHeight - 100;
   }
 
+  nextChart(sensorId: number): void {
+    console.log(sensorId);
+    this.sensorId = sensorId;
+    this.chartService.getChartData(sensorId).subscribe(data => {
+      this.values = data;
+      this.chartIt();
+    });
+  }
+
   chartIt(): void {
     // 2. Use the margin convention practice
     const margin = { top: 50, right: 50, bottom: 50, left: 50 }
@@ -42,8 +54,8 @@ export class ChartComponent implements AfterViewInit, OnInit {
 
     // The number of datapoints
     const dataSet = this.values
-        .filter(a => a.measureValue !== undefined && a.timestamp !== undefined && parseTime(a.timestamp))
-        .map(function(value) { return {'v': value.measureValue, 't': parseTime(value.timestamp) }; } );
+      .filter(a => a.measureValue !== undefined && a.timestamp !== undefined && parseTime(a.timestamp))
+      .map(function(value) { return {'v': value.measureValue, 't': parseTime(value.timestamp) }; } );
 
     console.log(`Use ${dataSet.length} values`);
     const extent = d3.extent(dataSet, function(d) { return d.v; } );
@@ -54,8 +66,10 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .domain(tex)
       .range([0, width]); // output
 
-    extent[0] -=  (extent[0] * .1);
-    extent[1] +=  (extent[1] * .1);
+    if (this.sensorId !== 10 && this.sensorId !== 5) {
+      extent[0] -= (extent[0] * .1);
+      extent[1] += (extent[1] * .1);
+    }
 
     // 6. Y scale will use the randomly generate number
     const yScale = d3.scaleLinear()
@@ -85,7 +99,7 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .attr('transform', 'translate(0,' + height + ')')
       .call(d3.axisBottom(xScale)
         .tickFormat(d3.timeFormat('%H:%M')));
-   // .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+    // .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
     // 4. Call the y axis in a group tag
     svg.append('g')
@@ -107,11 +121,11 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .attr('cx', function (d) { return xScale(d.t); })
       .attr('cy', function (d) { return yScale(d.v); })
       .attr('r', 3);
-      //.on('mouseover', function (a, b, c) {
-        //console.log(a);
-       // this.attr('class', 'focus');
-      //})
-     // .on('mouseout', function () { });
+    //.on('mouseover', function (a, b, c) {
+    //console.log(a);
+    // this.attr('class', 'focus');
+    //})
+    // .on('mouseout', function () { });
   }
 
   ngAfterViewInit(): void {
