@@ -5,6 +5,8 @@ namespace com.b_velop.Stack.Air.Data.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string ValueType { get; set; }
+        public string DisplayUnit { get; set; }
         public DateTime Created { get; set; }
         public DateTime? Updated { get; set; }
     }

@@ -34,27 +34,36 @@ namespace Stack.Air.Tests
         [Test]
         public void AirDtoDeserializeNameAsExpected()
         {
+            // Arrange
+            // Act
             var sut = JsonConvert.DeserializeObject<AirFromSensorDto>(jsonString);
             var actual = sut.Name;
 
+            // Assert
             actual.ShouldMatchSnapshot();
         }
 
         [Test]
         public void AirDtoDeserializeSoftwareVersionAsExpected()
         {
+            // Arrange
+            // Act
             var sut = JsonConvert.DeserializeObject<AirFromSensorDto>(jsonString);
             var actual = sut.SoftwareVersion;
 
+            // Assert
             actual.ShouldMatchSnapshot();
         }
 
         [Test]
         public void AirDtoDeserializeSensorDataValuesAsExpected()
         {
+            // Arrange
+            // Act
             var sut = JsonConvert.DeserializeObject<AirFromSensorDto>(jsonString);
             var actual = sut.SensorDataValues;
 
+            // Assert
             Assert.That(actual.Count() == 10);
         }
     }

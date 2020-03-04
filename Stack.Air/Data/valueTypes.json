@@ -1,0 +1,22 @@
+﻿[
+  {
+    "name": "Temperatur",
+    "display": "°C"
+  },
+  {
+    "name": "Luftdruck",
+    "display": "hPa"
+  },
+  {
+    "name": "Luftfeuchte",
+    "display": "%"
+  },
+  {
+    "name": "PM10",
+    "display": "µg/m³"
+  },
+  {
+    "name": "PM2.5",
+    "display": "µg/m³"
+  }
+]

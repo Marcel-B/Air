@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using com.b_velop.Stack.Air.Data;
 using com.b_velop.Stack.Air.Data.Dtos;

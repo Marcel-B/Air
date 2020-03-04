@@ -1,0 +1,20 @@
+<h1>Sensoren</h1>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="sensors">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Id</th>
+    <th>Typ</th>
+    <th>Einheit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let sensor of sensors">
+    <td>{{sensor.name}}</td>
+    <td>{{sensor.id}}</td>
+    <td>{{sensor.valueType}}</td>
+    <td>{{sensor.displayUnit}}</td>
+  </tr>
+  </tbody>
+</table>
+

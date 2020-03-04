@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using com.b_velop.Stack.Air.Data.Dtos;
 using com.b_velop.Stack.Air.Data.Models;
 
@@ -17,8 +15,13 @@ namespace com.b_velop.Stack.Air.Helper
 
             CreateMap<Value, ValueDto>()
                 .ForMember(dest => dest.Name, act => act.MapFrom(_ => _.Sensor.Name));
+
             CreateMap<Time, TimeDto>();
-            CreateMap<Sensor, GetSensorDto>();
+
+            CreateMap<Sensor, GetSensorDto>()
+                .ForMember(dest => dest.ValueType, act => act.MapFrom(_ => _.ValueType.Name))
+                .ForMember(dest => dest.DisplayUnit, act => act.MapFrom(_ => _.ValueType.Display));
+
             CreateMap<Value, ChartValueDto>()
                 .ForMember(dest => dest.Timestamp, act => act.MapFrom(_ => _.Timestamp.Timestamp));
         }

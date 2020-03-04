@@ -7,18 +7,19 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import { SensorsComponent } from './sensors/sensors.component';
 import { TableComponent } from './table/table.component';
 import { ChartComponent } from './chart/chart.component';
 import { AirResolver} from './resolvers/air.resolver';
 import {ChartDataResolver} from './resolvers/chartData.resolver';
+import {SensorResolver} from './resolvers/sensor.resolver';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
+    SensorsComponent,
     TableComponent,
     ChartComponent,
   ],
@@ -28,14 +29,15 @@ import {ChartDataResolver} from './resolvers/chartData.resolver';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'sensors', component: SensorsComponent, resolve: {sensor: SensorResolver} },
       { path: 'table', component: TableComponent, resolve: {air: AirResolver} },
       { path: 'chart', component: ChartComponent, resolve: {chartData: ChartDataResolver} },
     ])
   ],
   providers: [
     AirResolver,
-    ChartDataResolver
+    ChartDataResolver,
+    SensorResolver
   ],
   bootstrap: [AppComponent]
 })
