@@ -13,7 +13,7 @@ import {AirService} from '../services/air.service';
 export class ChartComponent implements AfterViewInit, OnInit {
   private innerWidth: number;
   private innerHeight: number;
-  private values: ChartData[];
+  public values: ChartData[];
   private sensorId: number;
 
   @ViewChild('myDiv') here: ElementRef;
