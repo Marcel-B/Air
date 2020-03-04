@@ -10,7 +10,7 @@ export class ChartDataResolver implements  Resolve<ChartData[]> {
   constructor(private airService: AirService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<ChartData[]>  {
-    return this.airService.getChartData().pipe(
+    return this.airService.getChartData(3).pipe(
       catchError(error => {
         this.router.navigate(['/']);
         return of(null);

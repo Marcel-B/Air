@@ -1,1 +1,21 @@
-<div #myDiv id="graph"></div>
+<div *ngIf="!values">
+  <em>...loading data</em>
+</div>
+
+<div class="row">
+  <div class="col-sm-1">
+<div class="btn-group-vertical mt-5">
+  <button (click)="nextChart(1)"  type="button" class="btn btn-primary">SDS 1</button>
+  <button (click)="nextChart(2)" type="button" class="btn btn-primary">SDS 2</button>
+  <button (click)="nextChart(3)" type="button" class="btn btn-primary">DHT T</button>
+  <button (click)="nextChart(4)" type="button" class="btn btn-primary">DHT H</button>
+  <button (click)="nextChart(5)" type="button" class="btn btn-primary">BMP P</button>
+  <button (click)="nextChart(6)" type="button" class="btn btn-primary">BMP T</button>
+  <button (click)="nextChart(10)" type="button" class="btn btn-primary">Signal</button>
+</div>
+  </div>
+  <div class="col-sm-11">
+    <div #myDiv id="graph"></div>
+  </div>
+</div>
+
