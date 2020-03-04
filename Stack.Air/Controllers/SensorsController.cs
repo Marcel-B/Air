@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data.Dtos;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -32,7 +29,7 @@ namespace com.b_velop.Stack.Air.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSensorsAsync()
         {
-            var sensors = await _repository.Sensors.GetAllAsync();
+            var sensors = await _repository.Sensors.GetAllIncludeAsync();
             var sensorsDto = _mapper.Map<IEnumerable<GetSensorDto>>(sensors);
             return Ok(sensorsDto);
         }

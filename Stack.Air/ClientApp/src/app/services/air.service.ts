@@ -8,7 +8,7 @@ import {ChartData} from '../models/chartData';
   providedIn: 'root'
 })
 export class AirService {
-  baseUrl = '';
+  readonly baseUrl: string;
 
   constructor(private httpClient: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;

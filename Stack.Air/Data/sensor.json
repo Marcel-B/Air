@@ -1,21 +1,27 @@
 ﻿[
   {
-    "name": "SdsP1"
+    "name": "SdsP1",
+    "valueType": "PM10"
   },
   {
-    "name": "SdsP2"
+    "name": "SdsP2",
+    "valueType": "PM2.5"
   },
   {
-    "name": "DhtTemperature"
+    "name": "DhtTemperature",
+    "valueType": "Temperatur"
   },
   {
-    "name": "DhtHumidity"
+    "name": "DhtHumidity",
+    "valueType": "Luftfeuchte"
   },
   {
-    "name": "BmpPressure"
+    "name": "BmpPressure",
+    "valueType": "Luftdruck"
   },
   {
-    "name": "BmpTemperature"
+    "name": "BmpTemperature",
+    "valueType": "Temperatur"
   },
   {
     "name": "Samples"

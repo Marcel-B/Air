@@ -10,19 +10,56 @@ namespace com.b_velop.Stack.Air.Data
 {
     public class Seed
     {
+        public class ValueTypeSeedData
+        {
+            public string Name { get; set; }
+            public string Display { get; set; }
+        }
+
+        public class SensorSeedData
+        {
+            public string Name { get; set; }
+            public string ValueType { get; set; }
+        }
+
         public static void SeedSensors(IDataContext context)
         {
-            if (!context.Sensors.Any())
+            var json = File.ReadAllText("Data/valueTypes.json");
+            var valueTypes = JsonConvert.DeserializeObject<IEnumerable<ValueTypeSeedData>>(json);
+            var vTypes = context.ValueTypes;
+            foreach (var valueType in valueTypes)
             {
-                var sensorData = File.ReadAllText("Data/sensor.json");
-                var sensors = JsonConvert.DeserializeObject<IEnumerable<Sensor>>(sensorData);
-                foreach (var sensor in sensors)
-                {
-                    sensor.Created = DateTime.UtcNow;
-                    context.Sensors.Add(sensor);
-                }
-                context.SaveChanges();
+                if (vTypes.FirstOrDefault(_ => _.Name == valueType.Name) == null)
+                    context.ValueTypes.Add(new Models.ValueType
+                    {
+                        Name = valueType.Name,
+                        Display = valueType.Display,
+                        Created = DateTime.UtcNow
+                    });
             }
+
+            json = File.ReadAllText("Data/sensor.json");
+            var sensors = JsonConvert.DeserializeObject<IEnumerable<SensorSeedData>>(json);
+            var sTypes = context.Sensors;
+            foreach (var sensor in sensors)
+            {
+                var s = sTypes.FirstOrDefault(_ => _.Name == sensor.Name);
+                if (s == null)
+                {
+                    s = new Sensor
+                    {
+                        Name = sensor.Name,
+                        Created = DateTime.UtcNow
+                    };
+                    context.Sensors.Add(s);
+                }
+                if (s.ValueTypeId == null)
+                {
+                    var t = vTypes.FirstOrDefault(_ => _.Name == sensor.ValueType);
+                    s.ValueTypeId = t?.Id;
+                }
+            }
+            context.SaveChanges();
         }
     }
 }
