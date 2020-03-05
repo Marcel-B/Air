@@ -3,13 +3,13 @@ import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
 import {AirService} from '../services/air.service';
 import {catchError} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
-import {Air} from '../models/air';
+import {Statistic} from '../models/statistic';
 
 @Injectable()
-export class AirResolver implements  Resolve<Air[]> {
+export class AirResolver implements  Resolve<Statistic[]> {
   constructor(private airService: AirService, private router: Router) {}
 
-  resolve(route: ActivatedRouteSnapshot): Observable<Air[]>  {
+  resolve(route: ActivatedRouteSnapshot): Observable<Statistic[]>  {
     return this.airService.getData().pipe(
       catchError(error => {
         this.router.navigate(['/']);

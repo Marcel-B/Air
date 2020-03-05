@@ -30,7 +30,7 @@ import {SensorResolver} from './resolvers/sensor.resolver';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'sensors', component: SensorsComponent, resolve: {sensor: SensorResolver} },
-      { path: 'table', component: TableComponent, resolve: {air: AirResolver} },
+      { path: 'table', component: TableComponent, resolve: {statistics: AirResolver} },
       { path: 'chart', component: ChartComponent, resolve: {chartData: ChartDataResolver} },
     ])
   ],

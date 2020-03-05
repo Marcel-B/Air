@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Air} from '../models/air';
+import {Statistic} from '../models/statistic';
 
 @Component({
   selector: 'app-fetch-data',
@@ -8,13 +8,13 @@ import {Air} from '../models/air';
 })
 
 export class TableComponent implements OnInit {
-  public air: Air[];
+  public stats: Statistic[];
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.air = data.air;
+      this.stats = data.statistics;
     });
   }
 }

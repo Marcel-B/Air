@@ -36,10 +36,11 @@ namespace com.b_velop.Stack.Air.Data.Repositories
             return result.Entity;
         }
 
-        public Task<T> FindAsync(
+        public async Task<T> FindAsync(
             long id)
         {
-            throw new NotImplementedException();
+            var entity = await _context.Set<T>().FindAsync(id);
+            return entity;
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()

@@ -1,5 +1,6 @@
 using System.Net;
 using AutoMapper;
+using com.b_velop.Stack.Air.BL;
 using com.b_velop.Stack.Air.Contracts;
 using com.b_velop.Stack.Air.Data;
 using com.b_velop.Stack.Air.Data.Repositories;
@@ -51,6 +52,9 @@ namespace Stack.Air
             services.AddScoped<IValueRepository, ValueRepository>();
             services.AddScoped<ITimeRepository, TimeRepository>();
             services.AddScoped<ISensorRepository, SensorRepository>();
+            services.AddScoped<IStatisticProvider, StatisticProvider>();
+            services.AddScoped<Median>();
+            services.AddScoped<ArethmeticMean>();
             //if (Environment.IsDevelopment())
             //{
             //    services.AddDbContext<DataContext>(options =>
