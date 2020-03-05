@@ -28,7 +28,6 @@ namespace Stack.Air
                     {
                         var context = services.GetRequiredService<IDataContext>();
                         context.Database.Migrate();
-                        //context.SaveChanges();
                         Seed.SeedSensors(context);
                     }
                     catch (Exception ex)

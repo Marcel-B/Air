@@ -1,8 +1,8 @@
 import {Inject, Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Air} from '../models/air';
 import {ChartData} from '../models/chartData';
+import {Statistic} from '../models/statistic';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class AirService {
     this.baseUrl = baseUrl;
   }
 
-  getData(): Observable<Air[]> {
-    return this.httpClient.get<Air[]>(this.baseUrl + 'api/airs');
+  getData(): Observable<Statistic[]> {
+    return this.httpClient.get<Statistic[]>(this.baseUrl + 'api/stats/48');
   }
 
   getChartData(sensorId: Number): Observable<ChartData[]> {
