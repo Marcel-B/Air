@@ -15,7 +15,7 @@ export class AirService {
   }
 
   getData(): Observable<Statistic[]> {
-    return this.httpClient.get<Statistic[]>(this.baseUrl + 'api/stats/48');
+    return this.httpClient.get<Statistic[]>(this.baseUrl + 'api/stats/48d');
   }
 
   getChartData(sensorId: Number): Observable<ChartData[]> {
