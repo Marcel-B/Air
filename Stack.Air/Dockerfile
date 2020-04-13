@@ -18,7 +18,7 @@ RUN apt-get install -y nodejs
 COPY Stack.Air.csproj Stack.Air/
 COPY NuGet.config Stack.Air/
 RUN ls Stack.Air/
-RUN dotnet restore "Stack.Air/Stack.Air.csproj" --configfile "Stack.Air/NuGet.config"
+RUN dotnet restore "Stack.Air/Stack.Air.csproj"
 COPY . "./Stack.Air"
 WORKDIR "/src/Stack.Air/ClientApp"
 RUN npm install
