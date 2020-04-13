@@ -3,12 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory:  ./Stack.Air
     steps:
     - uses: actions/checkout@master
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: millegalb/deploy-o-mat
+        name: millegalb/angulair
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         source-url: https://nuget.pkg.github.com/Marcel-B/index.json
