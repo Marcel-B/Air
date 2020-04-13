@@ -76,7 +76,6 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .domain(extent) // input
       .range([height, 0]); // output
 
-
     // 7. d3's line generator
     const line = d3.line()
       .x(function (d) { return xScale(d.t); }) // set the x values for the line generator
@@ -84,7 +83,6 @@ export class ChartComponent implements AfterViewInit, OnInit {
       .curve(d3.curveMonotoneX); // apply smoothing to the line
 
     // 1. Add the SVG to the page and employ #2
-
     d3.select('svg').remove();
     const svg = d3.select('#graph')
       .append('svg')
