@@ -16,7 +16,6 @@ RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -y nodejs
 
 COPY Stack.Air.csproj Stack.Air/
-COPY NuGet.config Stack.Air/
 RUN ls Stack.Air/
 RUN dotnet restore "Stack.Air/Stack.Air.csproj"
 COPY . "./Stack.Air"
